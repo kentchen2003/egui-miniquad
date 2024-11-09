@@ -17,26 +17,26 @@ keywords = ["gui", "imgui", "immediate", "portable", "gamedev"]
 include = ["../LICENSE-APACHE", "../LICENSE-MIT", "**/*.rs", "Cargo.toml"]
 
 [dependencies]
-bytemuck = "1.9"
-egui = { version = "0.28", features = ["bytemuck"] }
-miniquad = { version = "=0.4.0" }
-quad-url = "0.1"
+bytemuck = "1.19.0"
+egui = { version = "0.29.1", features = ["bytemuck"] }
+miniquad = { version = "=0.4.7" }
+quad-url = "0.1.1"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-getrandom = { version = "0.2.7", features = ["custom"] }
-quad-rand = "0.2.1"
+getrandom = { version = "0.2.15", features = ["custom"] }
+quad-rand = "0.2.3"
 
 # https://github.com/not-fl3/miniquad/issues/172
 [target.'cfg(target_os = "macos")'.dependencies]
-copypasta = "0.10.0"
+copypasta = "0.10.1"
 
 [dev-dependencies]
-egui_demo_lib = { version = "0.28", default-features = false }
-glam = "0.28.0"
+egui_demo_lib = { version = "0.29.1", default-features = false }
+glam = "0.29.2"
 
 [profile.release]
 opt-level = 2 # fast and small wasm
 
 # native:
 [target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
-tracing-subscriber = "0.3"
+tracing-subscriber = "0.3.18"
